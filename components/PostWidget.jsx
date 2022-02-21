@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import moment from 'moment';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ const PostWidget = ({ categories, slug }) => {
         {relatedPosts.map((post) => (
           <div key={post.title} className="flex items-center bg__color w-full mb-4">
               <div className='w-16 flex-none'>
-                  <Image 
+                  <img
                     alt={post.title}
                     height='60px'
                     width='60px'
