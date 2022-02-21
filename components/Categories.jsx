@@ -19,7 +19,7 @@ const Categories = ({ index }) => {
         </h3>
         {categories.map((category) => (
             <Link key={index} href={`/category/${category.slug}`}>
-                <span className={`cursor-pointer block ${(index === categories.length - 1) ? 'border-b-0' : 'border-b'} pb-3 mb-3`}>{category.name}</span>
+                <span className={`cursor-pointer bg__color-categories_recent block ${(index === categories.length - 1) ? 'border-b-0' : 'border-b'} pb-3 mb-3`}>{category.name}</span>
             </Link>
         ))}
     </div>
