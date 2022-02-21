@@ -5,21 +5,20 @@ import Link from 'next/link';
 import { getRecentPosts, getSimilarPosts } from '../services';
 
 const PostWidget = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([]);
-
-  useEffect(() => {
-      if(slug) {
-          getSimilarPosts(categories, slug)
-              .then((result) => setRelatedPosts(result));
-      } else {
-          getRecentPosts()
-              .then((result) => setRelatedPosts(result));
-      }
-  }, [slug])
-
-  console.log(relatedPosts)
+    const [relatedPosts, setRelatedPosts] = useState([]);
   
-
+    useEffect(() => {
+      if (slug) {
+        getSimilarPosts(categories, slug).then((result) => {
+          setRelatedPosts(result);
+        });
+      } else {
+        getRecentPosts().then((result) => {
+          setRelatedPosts(result);
+        });
+      }
+    }, [slug]);
+  
   return (
     <div className='shadow-lg border__bg shadow__bg rounded-lg p-8 mb-8'>
         <h3 className='text-xl mb-8 font-semibold bg__color-for_recent border-b p-4'>
