@@ -7,9 +7,10 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-        getCategories()
-            .then((newCategories) => setCategories(newCategories))
-      }, []);
+    getCategories().then((newCategories) => {
+      setCategories(newCategories);
+    });
+  }, []);
 
   return (
     <div className="border__bg shadow__bg shadow-lg rounded-lg p-8 mb-8">
