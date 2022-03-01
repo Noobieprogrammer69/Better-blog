@@ -77,7 +77,7 @@ export const getRecentPosts = async () => {
   const query = gql `
     query GetPostDetails() {
       posts(
-        orderBy: createdAt_DEC
+        orderBy: createdAt_ASC
         last: 4
       ) {
         title
